@@ -5,19 +5,14 @@ import { setIsSidebarCollapsed } from "@/state";
 import { useGetAuthUserQuery, useGetProjectsQuery } from "@/state/api";
 import { signOut } from "aws-amplify/auth";
 import {
-  AlertCircle,
-  AlertOctagon,
-  AlertTriangle,
   Briefcase,
   ChevronDown,
   ChevronUp,
   Home,
-  Layers3,
   LockIcon,
   LucideIcon,
   Search,
   Settings,
-  ShieldAlert,
   User,
   Users,
   X,
@@ -59,7 +54,7 @@ const Sidebar = () => {
         {/* TOP LOGO */}
         <div className="z-50 flex min-h-[56px] w-64 items-center justify-between bg-white px-6 pt-3 dark:bg-black">
           <div className="text-xl font-bold text-gray-800 dark:text-white">
-            EDLIST
+          PM LIST
           </div>
           {isSidebarCollapsed ? null : (
             <button
@@ -82,7 +77,7 @@ const Sidebar = () => {
           />
           <div>
             <h3 className="text-md font-bold tracking-wide dark:text-gray-200">
-              EDROH TEAM
+            EXE. ROMAN
             </h3>
             <div className="mt-1 flex items-start gap-2">
               <LockIcon className="mt-[0.1rem] h-3 w-3 text-gray-500 dark:text-gray-400" />
@@ -123,43 +118,6 @@ const Sidebar = () => {
             />
           ))}
 
-        {/* PRIORITIES LINKS */}
-        <button
-          onClick={() => setShowPriority((prev) => !prev)}
-          className="flex w-full items-center justify-between px-8 py-3 text-gray-500"
-        >
-          <span className="">Priority</span>
-          {showPriority ? (
-            <ChevronUp className="h-5 w-5" />
-          ) : (
-            <ChevronDown className="h-5 w-5" />
-          )}
-        </button>
-        {showPriority && (
-          <>
-            <SidebarLink
-              icon={AlertCircle}
-              label="Urgent"
-              href="/priority/urgent"
-            />
-            <SidebarLink
-              icon={ShieldAlert}
-              label="High"
-              href="/priority/high"
-            />
-            <SidebarLink
-              icon={AlertTriangle}
-              label="Medium"
-              href="/priority/medium"
-            />
-            <SidebarLink icon={AlertOctagon} label="Low" href="/priority/low" />
-            <SidebarLink
-              icon={Layers3}
-              label="Backlog"
-              href="/priority/backlog"
-            />
-          </>
-        )}
       </div>
       <div className="z-10 mt-32 flex w-full flex-col items-center gap-4 bg-white px-8 py-4 dark:bg-black md:hidden">
         <div className="flex w-full items-center">
